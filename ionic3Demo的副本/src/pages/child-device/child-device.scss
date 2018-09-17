@@ -1,0 +1,87 @@
+page-child-device {
+    .toolbar-title-md{
+        text-align: center;
+      }
+    .content{
+        background-color: rgb(229, 229, 229);
+    }
+    .siding-type{
+        padding-top: 20px;
+        background-color: white;
+        position: relative;
+
+    }
+    .add-device-style {
+        text-align: center;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-bottom: 0px;
+        background-color: #488aff;
+        color: white;
+
+    }
+    .buttom-toobar{
+        min-height: 1rem;
+        height: 33px;
+        padding-left: 0px;
+        background-color:rgb(249, 249, 249);
+        font-size: 6pt;
+    }
+    .online {
+        width: 60px;
+        height: 30px;
+        float: right;
+        position: absolute;
+        top: 50%;
+        margin-top: -15px;
+        right: 10px;
+        color:gray;
+    }
+    p span{
+        color: red;
+    }
+    .input-wrapper {
+        border-top: 1px rgb(249, 249, 249);
+    }
+
+
+    .wx-button-bar .icon{
+        margin-right: 5px;
+        font-family: arial;
+        font-size: 13px;
+        color: gray;
+    }
+    .list-ios .item-block .item-inner{
+        border:0;
+        padding-right:0;
+    }
+    .list-md .item-block .item-inner {
+        border:0;
+        padding-right:0;
+    }
+    .wx-button-bar{
+        display:flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap:wrap;
+        background-color:rgb(249, 249, 249);
+        border-top:1px solid rgb(238, 238, 238);
+        }
+    .wx-button-positive-circle{
+        flex-grow:1;
+        padding:8px 0;
+        text-align: center;
+        border-right:1px solid rgb(230, 230, 230);
+        width: 50% ;
+    }
+    .wx-button-positive-alarm{
+        flex-grow:1;
+        padding:8px 0;
+        text-align: center;
+        width: 50% ;
+
+    }
+    
+
+}

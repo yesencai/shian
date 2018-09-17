@@ -1,0 +1,36 @@
+<!--
+  Generated template for the PowerRecoveryPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>powerRecovery</ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only color="light" (click)="saveSetting()">
+          保存
+        </button>
+      </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label class="choose">请选择继电器</ion-label>
+      <ion-select [(ngModel)]="relay" cancelText="取消" okText="确认">
+        <ion-option value="relayOne" selected="true">继电器一</ion-option>
+        <ion-option value="relayTwo">继电器二</ion-option>
+        <ion-option value="all">全选</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label class="choose">断电记忆</ion-label>
+      <ion-toggle value="foo" (ionChange)="toggleFun()"></ion-toggle>
+    </ion-item>
+  </ion-list>
+</ion-content>

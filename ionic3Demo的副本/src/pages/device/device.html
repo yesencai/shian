@@ -1,0 +1,85 @@
+<ion-header>
+	<ion-navbar color="primary" no-border-bottom>
+		<ion-title>设备列表</ion-title>
+		<ion-buttons end>
+			<button ion-button color="white" icon-only (click)="presentPopover($event)">
+				<ion-icon name="more"></ion-icon>
+			</button>
+		</ion-buttons>
+		<!-- <ion-buttons end>
+			<button ion-button icon-only color="light" (click)="addDevice()">
+				添加设备
+			</button>
+		</ion-buttons> -->
+	</ion-navbar>
+</ion-header>
+
+<ion-content #popoverContent>
+	<!--
+    	作者：yesencai@163.com
+    	时间：2018-05-16
+    	描述：添加设备的按钮
+    -->
+	<div class="add-device-style">
+		<button ion-button block color="primary" (click)="addDevice()" *ngIf="showGreeting">
+			添加设备
+		</button>
+	</div>
+
+	<!--
+     	作者：yesencai@163.com
+     	时间：2018-05-16
+     	描述：设备list列表
+	 -->
+	<!-- <ion-refresher (ionRefresh)="doRefresh($event)">
+		<ion-refresher-content
+		  pullingIcon="arrow-dropdown"
+		  pullingText="下拉刷新"
+		  refreshingSpinner="circles"
+		  refreshingText="正在刷新">
+		</ion-refresher-content>
+	  </ion-refresher> -->
+
+	<ion-list class="device-list">
+		<div *ngFor="let item of listData" style="margin-top: 10px">
+			<ion-item (click)="deviceInfo(item)" style="padding-left:16px;">
+				<ion-avatar item-left>
+					<img [src]="item?.deviceImg" style="size: 50px;">
+				</ion-avatar>
+				<h2>{{item?.title}}</h2>
+				<!-- <div class="address">{{item?.address}}</div> -->
+				<p>设备ID:{{item?.deviceId}}</p>
+				<p>位置:{{item?.address}}</p>
+				<p class="device-count">子设备数量：{{item?.count}}</p>
+				<p class="statue-protection">{{item?.protectionState}}</p>
+				<div  item-right style="height: 100%; width: 100px;position: relative;">
+					<div style="display: inline-block;position: absolute;top: 30%;right: 0;">
+						<p>{{item?.deviceMode}}</p>
+						<p>{{item?.onlineStype}}</p>
+					</div>
+
+				</div>
+			</ion-item>
+
+			<ion-item class="wx-buttom-bar">
+				<div class="wx-button-bar">
+					<div class="wx-button-positive-circle" (click)="removal($event,item)">
+						<ion-icon name="close-circle">
+							<span>撤防</span>
+						</ion-icon>
+					</div>
+					<div class="wx-button-positive-alarm" (click)="outProtection($event,item)">
+						<ion-icon name="alarm">
+							<span>外出布防</span>
+						</ion-icon>
+					</div>
+					<div class="wx-button-positive-home" (click)="homeProtection($event,item)">
+						<ion-icon name="home">
+							<span>在家布防</span>
+						</ion-icon>
+					</div>
+				</div>
+			</ion-item>
+		</div>
+	</ion-list>
+</ion-content>
